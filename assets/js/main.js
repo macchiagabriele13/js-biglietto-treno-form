@@ -56,8 +56,45 @@ if (userAge < 18) {
 }
 console.log("controllo finalPrice", finalPrice + "€");
 
-const finalTicket = ("Ciao il prezzo del tuo biglietto è " + finalPrice)
+
+
+let discountName 
+
+if (userAge < 18) {
+    discountName = "Sconto Minorenne";
+    //console.log(ticketPriceUnder + "€");
+
+} else if (userAge > 65) {
+    discountName = "Sconto Over 65";
+    //console.log(ticketPriceUnder + "€");
+
+} else {
+    discountName = "Nessuno Sconto Applicato";
+    //console.log(ticketPriceUnder + "€");
+}
+console.log("controllo sconto applicato", discountName);
+document.getElementById('sconto').innerHTML = discountName
+
+
+
+const finalTicket = finalPrice
 console.log(finalTicket);
+document.getElementById('prezzo').innerHTML = finalTicket
+
+
+const ticketName = userName
+document.getElementById('titolare').innerHTML = ticketName
+
+const carrozza = Math.floor(Math.random() *10 )
+document.getElementById('carrozza').innerHTML = carrozza
+
+function getRandomIntInclusive(min, max) { min = Math.ceil(10000); max = Math.floor(99999); return Math.floor(Math.random() * (max - min + 1)) + min; } 
+
+const zipCode= getRandomIntInclusive(10000, 99999)
+document.getElementById('cp').innerHTML = zipCode
+
+
+
 
 });
 
